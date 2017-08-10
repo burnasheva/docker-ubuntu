@@ -5,13 +5,11 @@ RUN apt-get update \
 	git \
 	&& rm -rf /var/lib/apt/lists/*
 
+
+COPY welcome.sh /welcome.sh
+RUN chmod +x /welcome.sh && sync && \
+    echo '[ ! -z "$TERM" -a -x /welcome.sh -a -x /welcome.sh ] && /welcome.sh' >> /etc/bash.bashrc
+
 RUN useradd --create-home -s /bin/bash user
 WORKDIR /home/user
 USER user
-
-RUN echo "
- ___
-{O,O}
-|)__)
--\"-\"-
-"
