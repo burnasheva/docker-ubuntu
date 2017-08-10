@@ -10,6 +10,6 @@ COPY welcome.sh /welcome.sh
 RUN chmod +x /welcome.sh && sync && \
     echo '[ ! -z "$TERM" -a -x /welcome.sh -a -x /welcome.sh ] && /welcome.sh' >> /etc/bash.bashrc
 
-RUN useradd --create-home -s /bin/bash user
-WORKDIR /home/user
-USER user
+RUN useradd --create-home -s /bin/bash owl
+WORKDIR /home/owl
+USER owl
