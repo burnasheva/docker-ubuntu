@@ -12,4 +12,4 @@ RUN chmod +x /welcome.sh && sync && \
 
 RUN useradd --create-home -s /bin/bash owl
 WORKDIR /home/owl
-USER owl
+USER root
